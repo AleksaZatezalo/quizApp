@@ -12,7 +12,28 @@ object Constants{
                 "Croatia",
                 "Mexico",
                 1)
+        val que2 = Question(
+                2,
+                "what country does this flag belong to",
+                R.drawable.flag,
+                "Serbia",
+                "Canada",
+                "Croatia",
+                "Mexico",
+                1)
+
+        val que3 = Question(
+                3,
+                "what country does this flag belong to",
+                R.drawable.flag,
+                "Serbia",
+                "Canada",
+                "Croatia",
+                "Mexico",
+                1)
         questionList.add(que1)
+        questionList.add(que2)
+        questionList.add(que3)
         return questionList
     }
 
