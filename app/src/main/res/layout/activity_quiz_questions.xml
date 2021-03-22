@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".QuizQuestionsActivity">
+    android:background="@drawable/mnt"
+    tools:context=".QuizQuestionsActivity"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,8 +21,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:textColor="#363A43"
+            android:textColor="@color/white"
             android:textSize="22sp"
+            android:textStyle="bold"
             android:text="What country does this flag belong to?"/>
 
         <LinearLayout
