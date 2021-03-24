@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
@@ -27,18 +29,26 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         val tv_opt_two = this.findViewById<TextView>(R.id.tv_option_two)
         val tv_opt_three = this.findViewById<TextView>(R.id.tv_option_three)
         val tv_opt_four = this.findViewById<TextView>(R.id.tv_option_four)
+        val btn_submit = this.findViewById<Button>(R.id.btn_submit)
 
         tv_opt_one.setOnClickListener(this)
         tv_opt_two.setOnClickListener(this)
         tv_opt_three.setOnClickListener(this)
         tv_opt_four.setOnClickListener(this)
+        btn_submit.setOnClickListener(this)
     }
 
     private fun setQuestion(){
-        mCurrentPosition = 1
         val question = mQuestionsList!!.get(mCurrentPosition - 1)
+        val btn_submit = this.findViewById<Button>(R.id.btn_submit)
 
         defualtOptionsView()
+
+        if (mCurrentPosition == mQuestionsList!!.size){
+            btn_submit.text = "Finish"
+        } else{
+            btn_submit.text = "Submit"
+        }
 
         val prog_bar = this.findViewById<ProgressBar>(R.id.progressBar)
         val tv_progress = this.findViewById<TextView>(R.id.tv_progress)
@@ -87,19 +97,85 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         val tv_opt_two = this.findViewById<TextView>(R.id.tv_option_two)
         val tv_opt_three = this.findViewById<TextView>(R.id.tv_option_three)
         val tv_opt_four = this.findViewById<TextView>(R.id.tv_option_four)
+        val btn_submit = this.findViewById<Button>(R.id.btn_submit)
 
         when(v?.id){
             R.id.tv_option_one -> {
                 selectedOptionView(tv_opt_one, 1)
             }
             R.id.tv_option_two -> {
-                selectedOptionView(tv_opt_two, 1)
+                selectedOptionView(tv_opt_two, 2)
             }
             R.id.tv_option_three -> {
-                selectedOptionView(tv_opt_three, 1)
+                selectedOptionView(tv_opt_three, 3)
             }
             R.id.tv_option_four -> {
-                selectedOptionView(tv_opt_four, 1)
+                selectedOptionView(tv_opt_four, 4)
+            }
+            R.id.btn_submit ->{
+                if (mSelectedOptionPosition == 0){
+                    mCurrentPosition ++
+
+                    when {
+                        mCurrentPosition <= mQuestionsList!!.size -> {
+                            setQuestion()
+                        }
+                        else -> {
+                            Toast.makeText(
+                                    this, "You have finished!",
+                                    Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                } else {
+                    val question = mQuestionsList?.get(mCurrentPosition - 1)
+                    if (question!!.correctAnswer != mSelectedOptionPosition){
+                        answerView(mSelectedOptionPosition, R.drawable.incorrect_option_border_bg)
+                    }
+                    answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+                    if (mCurrentPosition == mQuestionsList!!.size){
+                        btn_submit.text = "Finish"
+                    }else {
+                        btn_submit.text = "Next"
+                    }
+                }
+                mSelectedOptionPosition = 0
+            }
+        }
+    }
+
+    private fun answerView(answer: Int, drawableView: Int){
+        val tv_opt_one = this.findViewById<TextView>(R.id.tv_option_one)
+        val tv_opt_two = this.findViewById<TextView>(R.id.tv_option_two)
+        val tv_opt_three = this.findViewById<TextView>(R.id.tv_option_three)
+        val tv_opt_four = this.findViewById<TextView>(R.id.tv_option_four)
+
+        when(answer){
+            1 ->{
+                tv_opt_one.background = ContextCompat.getDrawable(
+                        this,
+                        drawableView
+                )
+            }
+
+            2 ->{
+                tv_opt_two.background = ContextCompat.getDrawable(
+                        this,
+                        drawableView
+                )
+            }
+
+            3 ->{
+                tv_opt_three.background = ContextCompat.getDrawable(
+                        this,
+                        drawableView
+                )
+            }
+
+            4 ->{
+                tv_opt_four.background = ContextCompat.getDrawable(
+                        this,
+                        drawableView
+                )
             }
         }
     }
