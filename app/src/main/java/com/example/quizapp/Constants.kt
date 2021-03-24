@@ -14,7 +14,7 @@ object Constants{
                 "Spam",
                 "DOS or DDOS",
                 "Phishing",
-                "Option 2 & 3",
+                "Options 2 & 3",
                 4)
         val que2 = Question(
                 2,
@@ -61,16 +61,16 @@ object Constants{
             "A firewall is a type of?",
             R.drawable.flag,
             "Virus",
-            "Security Threat",
+            "Security threat",
             "Worm",
-            "Security Measure",
+            "Security measure",
             4)
 
         val que7 = Question(
             7,
             "Which of the following threats are internal?",
             R.drawable.flag,
-            "Trojan Horse",
+            "A trojan horse",
             "Adware",
             "Angry Employees",
             "Spam",
@@ -81,9 +81,9 @@ object Constants{
             "Hackers use proxy servers to?",
             R.drawable.flag,
             "Create strong connections",
-            "Get Remote Access",
-            "Hide there Activity",
-            "For no Reason",
+            "Get remote access",
+            "To hide their location",
+            "For no reason",
             3)
 
         val que9 = Question(
@@ -100,7 +100,7 @@ object Constants{
             10,
             "Hiding information in photos is called?",
             R.drawable.flag,
-            "Image Rendering",
+            "Image rendering",
             "Stenography",
             "Rooting",
             "Backdoor",
@@ -148,7 +148,7 @@ object Constants{
 
         val que15 = Question(
             15,
-            "Hacking first looks to compormise?",
+            "Hacking first looks to compromise?",
             R.drawable.flag,
             "Availability",
             "Confidentiality",
@@ -178,7 +178,7 @@ object Constants{
 
         val que18 = Question(
             18,
-            "Which nmap flag is used for to run a Christmas scan?",
+            "Which nmap flag is used to run a Christmas scan?",
             R.drawable.flag,
             "-sV",
             "-sX",
@@ -188,12 +188,12 @@ object Constants{
 
         val que19 = Question(
             19,
-            "Which is used to crack password hashes?",
+            "Which tool is used to crack password hashes?",
             R.drawable.flag,
             "Rainbow tables",
-            "Dictionaries and Word lists",
+            "Dictionaries and word lists",
             "Hydra",
-            "Decryption Tools",
+            "Decryption tools",
             1)
 
         val que20 = Question(
@@ -228,7 +228,7 @@ object Constants{
 
         val que23 = Question(
             23,
-            "Phishing Scams Involve?",
+            "Phishing scams involve?",
             R.drawable.flag,
             "Computer Code",
             "Just email",
