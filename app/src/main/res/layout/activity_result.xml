@@ -15,7 +15,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_weight="Result"
         android:text="Result"
         android:textColor="@color/black"
         android:textSize="25sp"
@@ -24,8 +23,9 @@
     <ImageView
         android:layout_width="161dp"
         android:layout_height="338dp"
+        android:alpha="0.0"
         android:contentDescription="image"
-        android:src="@drawable/ic_trophy" />
+        android:src="@drawable/ic_toph_2" />
 
     <TextView
         android:id="@+id/tv_congradulations"
