@@ -240,7 +240,7 @@ object Constants{
             24,
             "Spearphishing is?",
             R.drawable.flag,
-            "No diffrent from phishing",
+            "No different from phishing",
             "Targets specific people",
             "Uses SMS",
             "Uses email",
@@ -250,9 +250,9 @@ object Constants{
             25,
             "Public key encryption?",
             R.drawable.flag,
-            "Uses two diffrent keys",
+            "Uses two different keys",
             "Uses one key",
-            "Used in AES",
+            "Is used in AES",
             "Is symetric",
             1)
 
