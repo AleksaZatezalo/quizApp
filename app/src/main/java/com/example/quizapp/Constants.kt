@@ -238,9 +238,9 @@ object Constants{
 
         val que24 = Question(
             24,
-            "Spearphishing is?",
+            "Spearphishing ___?",
             R.drawable.flag,
-            "No different from phishing",
+            "Is no different from phishing",
             "Targets specific people",
             "Uses SMS",
             "Uses email",
@@ -248,7 +248,7 @@ object Constants{
 
         val que25 = Question(
             25,
-            "Public key encryption?",
+            "Public key encryption ___?",
             R.drawable.flag,
             "Uses two different keys",
             "Uses one key",
